@@ -1,0 +1,14 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+
+# Serve existing files and folders directly.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Allow clean static-export URLs like /menu and /contact.
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+ErrorDocument 404 /404.html
