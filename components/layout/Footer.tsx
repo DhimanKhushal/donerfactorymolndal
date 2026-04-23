@@ -1,11 +1,10 @@
-import Link from "next/link";
+import Image from "next/image";
 
 import { Container } from "@/components/layout/Container";
 
 const openingHours = [
-  "Mån - Tors: 11:00 - 21:00",
-  "Fre - Lör: 11:00 - 22:00",
-  "Sön: 12:00 - 21:00",
+  "Mån - Lör: 10:00 - 21:00",
+  "Sön: 10:00 - 20:00",
 ];
 
 export function Footer() {
@@ -13,40 +12,38 @@ export function Footer() {
     <footer className="relative z-10 border-t border-white/10 bg-[#120f0f]/92 py-10">
       <Container className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
         <div className="space-y-3">
-          <p className="font-heading text-2xl text-white">Doner Factory Mölndal</p>
-          <p className="max-w-md text-sm leading-7 text-accent/62">
+          <div className="relative h-14 w-56">
+            <Image
+              src="/logo/doner-factory.svg"
+              alt="Doner Factory Mölndal"
+              fill
+              sizes="224px"
+              className="object-contain object-left"
+            />
+          </div>
+          <p className="max-w-md text-sm text-accent/72 md:text-base">
             Döner med tydlig identitet, nybakat bröd och varma smaker för lunch,
             middag och snabba stopp mitt i Mölndal.
           </p>
         </div>
 
         <div className="space-y-3">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-accent/42">
+          <p className="text-sm md:text-base font-medium uppercase tracking-[0.3em] text-accent/42">
             Hitta Rätt
           </p>
-          <div className="space-y-2 text-sm text-accent/68">
-            <p>Göteborgsvägen 1</p>
+          <div className="space-y-2 text-sm text-accent/72 md:text-base">
+            <p>Brogatan 32</p>
             <p>431 30 Mölndal</p>
-            <p>+46 31 123 45 67</p>
+            <p>0763282782</p>
           </div>
         </div>
 
         <div className="space-y-3">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-accent/42">
+          <p className="text-sm md:text-base font-medium uppercase tracking-[0.3em] text-accent/42">
             Snabbvägar
           </p>
-          <div className="flex flex-wrap gap-3 text-sm uppercase tracking-[0.2em] text-accent/64">
-            <Link href="/" className="transition hover:text-white">
-              Hem
-            </Link>
-            <Link href="/menu" className="transition hover:text-white">
-              Meny
-            </Link>
-            <Link href="/contact" className="transition hover:text-white">
-              Kontakt
-            </Link>
-          </div>
-          <div className="space-y-1 pt-2 text-sm text-accent/56">
+          
+          <div className="space-y-1 pt-2 text-sm text-accent/72 md:text-base">
             {openingHours.map((item) => (
               <p key={item}>{item}</p>
             ))}

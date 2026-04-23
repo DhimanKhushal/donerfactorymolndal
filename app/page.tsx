@@ -1,15 +1,19 @@
 import { DegustationSection } from "@/sections/DegustationSection";
 import { FeaturedMenu } from "@/sections/FeaturedMenu";
 import { Hero } from "@/sections/Hero";
+import { HomeMenuBoard } from "@/sections/HomeMenuBoard";
 import { PromiseSection } from "@/sections/PromiseSection";
 import { ReservationSection } from "@/sections/ReservationSection";
+import { TestimonialsSection } from "@/sections/TestimonialsSection";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <FeaturedMenu />
+      <HomeMenuBoard />
       <DegustationSection />
+      <FeaturedMenu />
+      <TestimonialsSection />
       <PromiseSection />
       <ReservationSection />
     </>

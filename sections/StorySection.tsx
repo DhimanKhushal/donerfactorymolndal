@@ -21,15 +21,15 @@ export function StorySection() {
   return (
     <section className="bg-[#1b0f10] py-24">
       <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <div className="relative overflow-hidden rounded-[1.8rem]">
+        <div className="relative overflow-hidden rounded-3xl">
           <Image
-            src="/featured-menu/pizza-photo.jpg"
+            src="/featured-menu/pizza-photo.webp"
             alt="Mörk restauranginteriör"
             width={1200}
             height={1400}
             className="h-[34rem] w-full object-cover"
           />
-          <div className="absolute bottom-6 right-6 max-w-xs rounded-[1.4rem] border border-white/8 bg-[#3c2c2d]/90 p-5 backdrop-blur-sm">
+          <div className="absolute bottom-6 right-6 max-w-xs rounded-2xl border border-white/8 bg-[#3c2c2d]/90 p-5 backdrop-blur-sm">
             <p className="text-3xl font-semibold text-stone-100">96%</p>
             <p className="mt-2 text-sm leading-6 text-accent/70">
               av våra gäster återvänder för smaken, servicen och den lugna

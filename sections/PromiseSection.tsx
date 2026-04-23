@@ -83,16 +83,16 @@ export function PromiseSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#161313] py-24 sm:py-28"
+      className="relative overflow-hidden border-y border-white/6 bg-[#161313] py-18 sm:py-28"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_center,_rgba(139,46,46,0.08),_transparent_34%),linear-gradient(180deg,_rgba(255,255,255,0.02)_0%,_rgba(255,255,255,0)_18%,_rgba(0,0,0,0.12)_100%)]" />
 
       <Container className="relative z-10 space-y-14">
-        <div className="space-y-4 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.55em] text-primary/80">
+        <div data-gsap-reveal className="space-y-4 text-center">
+          <p className="section-label mx-auto">
             Vårt löfte
           </p>
-          <h2 className="font-heading text-5xl leading-none text-white sm:text-6xl lg:text-[5.2rem]">
+          <h2 className="font-heading text-2xl md:text-3xl font-semibold leading-tight text-white">
             Varför Doner Factory?
           </h2>
         </div>
@@ -104,7 +104,7 @@ export function PromiseSection() {
             return (
               <article
                 key={promise.title}
-                className={`rounded-[2.2rem] border p-10 shadow-[0_28px_80px_rgba(0,0,0,0.18)] backdrop-blur-sm transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 ${
+                className={`rounded-3xl border p-6 shadow-[0_28px_80px_rgba(0,0,0,0.18)] backdrop-blur-sm transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 sm:p-10 ${
                   promise.featured
                     ? "border-[#513133] bg-[#241b1c]"
                     : "border-white/7 bg-white/[0.035]"
@@ -117,10 +117,10 @@ export function PromiseSection() {
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/22 text-2xl text-primary">
                   {promise.icon}
                 </div>
-                <h3 className="mt-9 whitespace-pre-line font-heading text-3xl leading-tight text-white">
+                <h3 className="mt-9 whitespace-pre-line font-heading text-xl md:text-2xl font-medium leading-tight text-white">
                   {promise.title}
                 </h3>
-                <p className="mt-6 max-w-[22ch] text-base leading-8 text-accent/46">
+                <p className="mt-6 max-w-[22ch] text-sm text-accent/72 md:text-base">
                   {promise.description}
                 </p>
               </article>
@@ -131,7 +131,7 @@ export function PromiseSection() {
         <div className="flex justify-center pt-4">
           <Link
             href="/contact"
-            className="rounded-xl bg-primary px-12 py-4 text-sm font-semibold uppercase tracking-[0.36em] text-white transition hover:bg-primary/90"
+            className="w-full rounded-xl bg-primary px-8 py-4 text-center text-sm md:text-base font-medium uppercase tracking-[0.22em] text-white transition hover:bg-primary/90 sm:w-auto sm:px-12 sm:tracking-[0.36em]"
           >
             Boka bord
           </Link>

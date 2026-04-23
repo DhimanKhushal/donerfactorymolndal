@@ -63,6 +63,28 @@
   }
 }
 
+@keyframes hero-copy-slide {
+  from {
+    opacity: 0;
+    transform: translate3d(-28px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-thumb-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
 @keyframes featured-card-float {
   from {
     opacity: 0;
@@ -88,6 +110,22 @@
 }
 
 @layer utilities {
+  .section-label {
+    @apply inline-flex w-fit rounded-full border border-primary/80 bg-[radial-gradient(circle_at_top_left,rgba(245,230,211,0.22),transparent_42%),linear-gradient(135deg,rgba(139,46,46,0.4),rgba(139,46,46,0.16))] px-3.5 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.28em] text-[#ffd8c4] shadow-[0_0_0_1px_rgba(245,230,211,0.08),0_0_24px_rgba(139,46,46,0.55),0_12px_34px_rgba(0,0,0,0.22)] sm:text-xs;
+  }
+
+  .section-title {
+    @apply font-heading text-2xl leading-tight text-white sm:text-3xl lg:text-4xl;
+  }
+
+  .section-copy {
+    @apply text-base leading-8 text-accent/72 sm:text-base;
+  }
+
+  .card-title {
+    @apply font-heading text-2xl leading-tight text-white sm:text-3xl;
+  }
+
   .hero-fade-in {
     animation: hero-fade-in 900ms ease-out both;
   }
@@ -95,6 +133,17 @@
   .hero-background {
     animation: hero-zoom 14s ease-out both;
     transform-origin: center;
+    will-change: transform;
+  }
+
+  .hero-copy-slide {
+    animation: hero-copy-slide 720ms ease-out both;
+    will-change: transform, opacity;
+  }
+
+  .hero-thumb-progress {
+    animation: hero-thumb-progress 3200ms linear both;
+    transform-origin: left;
     will-change: transform;
   }
 
@@ -116,4 +165,5 @@
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
 }

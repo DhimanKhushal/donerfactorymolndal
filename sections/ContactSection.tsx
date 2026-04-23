@@ -3,7 +3,7 @@ import { Container } from "@/components/layout/Container";
 const infoCards = [
   {
     title: "The Factory",
-    lines: ["Göteborgsvägen 1", "431 30 Mölndal, Sverige"],
+    lines: ["Brogatan 32", "431 30 Mölndal, Sverige"],
     action: "Hitta hit",
     icon: (
       <svg
@@ -25,7 +25,7 @@ const infoCards = [
   },
   {
     title: "Kontakt",
-    lines: ["Telefon", "+46 31 123 45 67", "E-post", "hello@donerfactory.se"],
+    lines: ["Telefon", "0763282782"],
     action: "Svar inom 24 timmar",
     icon: (
       <svg
@@ -47,9 +47,8 @@ const infoCards = [
   {
     title: "Öppettider",
     lines: [
-      "Mån - Tors   11:00 - 21:00",
-      "Fre - Lör   11:00 - 22:00",
-      "Söndag   12:00 - 21:00",
+      "Måndag - Lördag   10:00 - 21:00",
+      "Söndag   10:00 - 20:00",
     ],
     action: "Välkommen in",
     icon: (
@@ -89,42 +88,41 @@ const standards = ["Svenskt nötkött", "Färskt varje dag", "Lokala kryddor"];
 
 export function ContactSection() {
   return (
-    <section className="pb-24 pt-28 lg:pb-32 lg:pt-32">
+    <section className="pb-18 pt-10 sm:pb-24 sm:pt-16 lg:pb-32 lg:pt-24">
       <Container>
-        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#121212] shadow-[0_28px_90px_rgba(0,0,0,0.42)]">
+        <div
+          data-gsap-reveal
+          className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#121212] shadow-[0_28px_90px_rgba(0,0,0,0.42)]"
+        >
           <div className="relative overflow-hidden px-6 py-10 sm:px-8 lg:px-10 lg:py-12">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(245,230,211,0.08),_transparent_28%),radial-gradient(circle_at_top_right,_rgba(139,46,46,0.15),_transparent_24%)]" />
 
-            <div className="relative space-y-14">
-              <div className="grid gap-10 lg:grid-cols-[1.1fr_0.7fr] lg:items-end">
+            <div className="relative space-y-10 sm:space-y-14">
+              <div className="grid gap-6 lg:grid-cols-[1.1fr_0.7fr] lg:items-end lg:gap-10">
                 <div className="space-y-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.26rem] text-primary/80">
-                    Kontakta Oss
-                  </p>
-                  <h1 className="max-w-2xl font-heading text-5xl leading-[0.92] text-stone-100 sm:text-6xl lg:text-7xl">
+                  <p className="section-label">Kontakta Oss</p>
+                  <h1 className="max-w-2xl font-heading text-2xl md:text-3xl font-semibold leading-tight text-stone-100">
                     Smak skapad mitt i
                     <br />
                     <span className="italic text-accent">Mölndal.</span>
                   </h1>
                 </div>
-                <p className="max-w-md text-base leading-8 text-accent/75">
+                <p className="max-w-md text-sm text-accent/74 md:text-base">
                   Oavsett om du har frågor om våra råvaror, vill boka för ett
                   större sällskap eller bara dela din upplevelse, finns vi här
                   för dig.
                 </p>
               </div>
 
-              <div className="grid gap-4 lg:grid-cols-3">
+              <div data-gsap-stagger className="grid gap-4 lg:grid-cols-3">
                 {infoCards.map((card) => (
                   <article
                     key={card.title}
-                    className="rounded-[1.35rem] border border-white/8 bg-white/[0.04] p-6 backdrop-blur-sm"
+                    className="rounded-2xl border border-white/8 bg-white/[0.04] p-5 backdrop-blur-sm sm:p-6"
                   >
                     <div className="mb-6">{card.icon}</div>
-                    <h2 className="font-heading text-3xl text-stone-100">
-                      {card.title}
-                    </h2>
-                    <div className="mt-5 space-y-2 text-sm leading-7 text-accent/72">
+                    <h2 className="font-heading text-xl md:text-2xl font-medium leading-tight text-stone-100">{card.title}</h2>
+                    <div className="mt-5 space-y-2 text-sm text-accent/72 md:text-base">
                       {card.lines.map((line) => (
                         <p key={line}>{line}</p>
                       ))}
@@ -136,18 +134,19 @@ export function ContactSection() {
                 ))}
               </div>
 
-              <div className="grid gap-6 lg:grid-cols-[1.4fr_0.7fr] lg:items-start">
-                <div className="relative min-h-[19rem] overflow-hidden rounded-[1.5rem] border border-white/8 bg-[#1c1c1c] sm:min-h-[22rem]">
+              <div
+                data-gsap-reveal
+                className="grid gap-6 lg:grid-cols-[1.4fr_0.7fr] lg:items-start"
+              >
+                <div className="relative min-h-[15rem] overflow-hidden rounded-3xl border border-white/8 bg-[#1c1c1c] sm:min-h-[22rem]">
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.05),_rgba(255,255,255,0.02)),radial-gradient(circle_at_center,_rgba(255,255,255,0.08),_transparent_44%),linear-gradient(90deg,_rgba(255,255,255,0.04)_1px,_transparent_1px),linear-gradient(rgba(255,255,255,0.04)_1px,_transparent_1px)] bg-[size:auto,auto,42px_42px,42px_42px]" />
                   <div className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary shadow-[0_0_0_10px_rgba(139,46,46,0.18)]" />
                 </div>
 
-                <div className="space-y-6">
-                  <div className="rounded-[1.5rem] border border-white/8 bg-white/[0.04] p-6">
-                    <h2 className="font-heading text-4xl text-stone-100">
-                      Följ Oss
-                    </h2>
-                    <p className="mt-4 text-sm leading-7 text-accent/72">
+                <div data-gsap-stagger className="space-y-6">
+                  <div className="rounded-2xl border border-white/8 bg-white/[0.04] p-5 sm:p-6">
+                    <h2 className="font-heading text-2xl md:text-3xl font-semibold text-stone-100">Följ Oss</h2>
+                    <p className="mt-4 text-sm text-accent/72 md:text-base">
                       Gå med i vårt community för dagens erbjudanden,
                       bakom-kulisserna-material och lokala nyheter från köket.
                     </p>
@@ -163,11 +162,11 @@ export function ContactSection() {
                     </div>
                   </div>
 
-                  <div className="rounded-[1.5rem] border border-primary/20 bg-primary/12 p-6">
-                    <p className="text-xs font-bold uppercase tracking-[0.24rem] text-accent/70">
+                  <div className="rounded-2xl border border-primary/20 bg-primary/12 p-5 sm:p-6">
+                    <p className="text-xs font-medium uppercase tracking-[0.18rem] text-accent/70 sm:text-sm sm:tracking-[0.24rem] md:text-base">
                       Kockens Tips
                     </p>
-                    <p className="mt-4 text-sm italic leading-7 text-accent/80">
+                    <p className="mt-4 text-sm text-accent/72 italic md:text-base">
                       &quot;För bästa upplevelse, prova vår signatur Lamb Döner
                       under fredagslunchen, tunt skuren och serverad med vår
                       egen kryddiga sås.&quot;
@@ -176,8 +175,11 @@ export function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 border-t border-white/8 pt-8">
-                <p className="mr-2 text-[11px] font-bold uppercase tracking-[0.2rem] text-accent/42">
+              <div
+                data-gsap-reveal
+                className="flex flex-wrap items-center gap-3 border-t border-white/8 pt-8"
+              >
+                <p className="mr-2 text-xs font-medium uppercase tracking-[0.16rem] text-accent/42 sm:text-sm sm:tracking-[0.2rem] md:text-base">
                   Våra Standarder:
                 </p>
                 {standards.map((item) => (

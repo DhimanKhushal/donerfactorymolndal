@@ -6,12 +6,12 @@ const sideCards = [
   {
     title: "The Alchemy of Sumac",
     subtitle: "Utvalda Kryddor",
-    image: "/featured-menu/vegetarian-photo.jpg",
+    image: "/featured-menu/vegetarian-photo.webp",
   },
   {
     title: "Stone Oven Rituals",
     subtitle: "Bageriets Noteringar",
-    image: "/featured-menu/pizza-photo.jpg",
+    image: "/featured-menu/pizza-photo.webp",
   },
 ];
 
@@ -29,10 +29,10 @@ export function JournalSection() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <article className="overflow-hidden rounded-[1.8rem] border border-white/8 bg-white/[0.03]">
+          <article className="overflow-hidden rounded-3xl border border-white/8 bg-white/[0.03]">
             <div className="relative h-[26rem]">
               <Image
-                src="/featured-menu/burger-photo.jpg"
+                src="/featured-menu/burger-photo.webp"
                 alt="Journalhuvudbild"
                 fill
                 className="object-cover"
@@ -52,7 +52,7 @@ export function JournalSection() {
             {sideCards.map((card) => (
               <article
                 key={card.title}
-                className="overflow-hidden rounded-[1.6rem] border border-white/8 bg-white/[0.03]"
+                className="overflow-hidden rounded-3xl border border-white/8 bg-white/[0.03]"
               >
                 <div className="relative h-48">
                   <Image
@@ -73,7 +73,7 @@ export function JournalSection() {
               </article>
             ))}
 
-            <article className="flex min-h-[14rem] flex-col justify-between rounded-[1.6rem] border border-white/8 bg-[#3a2523] p-6">
+            <article className="flex min-h-[14rem] flex-col justify-between rounded-3xl border border-white/8 bg-[#3a2523] p-6">
               <div>
                 <p className="text-xs uppercase tracking-[0.22rem] text-accent/54">
                   Join the Inner Circle
