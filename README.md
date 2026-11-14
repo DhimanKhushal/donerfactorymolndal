@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Doner Factory Mölndal
 
-## Getting Started
+Next.js website exported as static HTML for Hostinger Business Web Hosting.
 
-First, run the development server:
+## Local development
 
-```bash
+Use Node.js 22 and npm (`package-lock.json` is the CI lockfile):
+
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Checks and build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run lint
+npm run typecheck
+npm test
+npm audit --audit-level=high
+npm run build
+npm run verify:export
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The price fixture in `tests/fixtures/menu-prices.json` is transcribed from the
+restaurant's supplied menu photos. Update it only when a confirmed price list
+changes. Burgers with different names and Loaded Fries were not mapped to other
+dishes in those photos.
 
-## Learn More
+## Automatic deployment
 
-To learn more about Next.js, take a look at the following resources:
+`.github/workflows/deploy.yml` checks pull requests and pushes to `main`.
+After all checks pass on `main`, GitHub Actions publishes only the generated
+`out/` files to `hostinger-production`. The source branch is never a web root.
+The publishing job uses GitHub's short-lived repository token; no hosting
+password or private SSH key is stored in Actions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Hostinger must be connected once:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Website: `donerfactorymolndal.se`
+- Dashboard: Advanced → Git
+- Repository: `DhimanKhushal/donerfactorymolndal`
+- Branch: `hostinger-production`
+- Repository root directory: `/` (the root of that branch)
+- Destination: this website's `public_html`
+- Automatic deployment: enabled
 
-## Deploy on Vercel
+Hostinger's Git integration copies already-built HTML; do not select `main`,
+because that branch contains the Next.js source. After publishing the branch,
+Actions waits up to five minutes for Hostinger to serve the source revision and
+checks all four public routes. A disconnected Git integration fails this check.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`https://donerfactorymolndal.se/deployment.json` identifies the deployed source
+commit and GitHub run. Compare it with the successful workflow run after
+Hostinger finishes. If cached pages remain, clear the website cache in hPanel.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can run **Build and deploy → Run workflow** to republish the current `main`.
+To roll back, revert the unwanted source commit on `main`; the same checked
+pipeline rebuilds and deploys it. The deployment branch also preserves its
+compiled-file history. Existing archives outside `public_html` remain available
+as a manual recovery option.

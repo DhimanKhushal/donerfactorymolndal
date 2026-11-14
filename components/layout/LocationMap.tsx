@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/Container";
+import { MotionReveal } from "@/components/ui/Motion";
 
 const address = "Brogatan 32, 431 30 Mölndal";
 const mapsQuery = encodeURIComponent(`${address}, Sweden`);
@@ -8,7 +9,7 @@ export function LocationMap() {
     <section className="relative overflow-hidden border-t border-white/6 bg-[#100d0d] py-16 sm:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_15%,rgba(139,46,46,0.18),transparent_28%),radial-gradient(circle_at_82%_65%,rgba(245,230,211,0.07),transparent_24%)]" />
       <Container className="relative z-10">
-        <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#171111]/68 shadow-[0_28px_90px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+        <MotionReveal className="overflow-hidden rounded-3xl border border-white/10 bg-[#171111]/68 shadow-[0_28px_90px_rgba(0,0,0,0.3)] backdrop-blur-xl">
           <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
             <div className="flex flex-col justify-between gap-8 p-6 sm:p-8 lg:p-10">
               <div className="space-y-4">
@@ -35,7 +36,7 @@ export function LocationMap() {
                   href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-xl bg-primary px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-primary/90 sm:w-auto"
+                  className="inline-flex w-full items-center justify-center rounded-xl bg-primary px-6 py-3 text-center text-sm font-semibold uppercase text-white transition hover:bg-primary/90 sm:w-auto"
                 >
                   Öppna i Google Maps
                 </a>
@@ -52,7 +53,7 @@ export function LocationMap() {
               />
             </div>
           </div>
-        </div>
+        </MotionReveal>
       </Container>
     </section>
   );

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import Image from "next/image";
 
+import { Container } from "@/components/layout/Container";
 import { getMenuItemImage } from "@/lib/menu-images";
 import { menuCategories } from "@/lib/menu-data";
 
@@ -30,7 +31,7 @@ export function FeaturedMenu() {
     menuCategories.find((item) => item.slug === activeCategory) ?? menuCategories[0];
 
   const featuredItems = useMemo(() => {
-    return currentCategory.items.slice(0, 4).map((item, index) => ({
+    return currentCategory.items.slice(0, 3).map((item, index) => ({
       id: `${activeCategory}-${item.name}`,
       title: item.name,
       description: item.ingredients,
@@ -45,7 +46,6 @@ export function FeaturedMenu() {
             ? "Signatur"
             : item.tag,
       badgeClass: badgeStyles[index % badgeStyles.length],
-      isCenter: index === 1,
     }));
   }, [activeCategory, currentCategory.items]);
 
@@ -85,7 +85,7 @@ export function FeaturedMenu() {
     <>
       <section className="relative overflow-hidden border-y border-white/6 bg-[#0f1114] py-18 sm:py-24">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_12%,rgba(139,46,46,0.18),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.028),transparent_30%)]" />
-        <div className="relative z-10 mx-auto max-w-screen-2xl px-5 sm:px-6 lg:px-8">
+        <Container className="relative z-10">
           <div
             data-gsap-reveal
             className="mb-12 flex flex-col justify-between gap-7 sm:mb-16 sm:gap-8 md:flex-row md:items-end"
@@ -127,59 +127,41 @@ export function FeaturedMenu() {
 
           <div
             key={activeCategory}
-            className="featured-panel-enter hide-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto px-1 pb-6 sm:gap-8 sm:px-4 sm:pb-8"
+            className="featured-panel-enter grid gap-5 pb-6 sm:gap-6 sm:pb-8 md:grid-cols-3"
           >
             {featuredItems.map((item, index) => (
               <div
                 key={item.id}
-                className={`featured-card group snap-center transition-transform duration-500 ${
-                  item.isCenter
-                    ? "min-w-[84vw] scale-[1.01] sm:min-w-[320px] md:min-w-[500px] md:scale-105"
-                    : "min-w-[84vw] sm:min-w-[320px] md:min-w-[450px]"
-                }`}
+                className="featured-card group transition-transform duration-500"
                 style={{ animationDelay: `${index * 110}ms` }}
               >
                 <div
-                  className={`relative overflow-hidden rounded-2xl ${
-                    item.isCenter
-                      ? "h-116 sm:h-130"
-                      : "h-104 bg-surface-container-low group-hover:scale-[1.02] sm:h-125"
-                  } transition-transform duration-500 ease-out`}
+                  className="relative h-104 overflow-hidden rounded-2xl bg-surface-container-low transition-transform duration-500 ease-out group-hover:scale-[1.02] sm:h-110 lg:h-116"
                 >
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className={`object-contain transition-all duration-700 sm:object-cover ${
-                      item.isCenter
-                        ? "group-hover:scale-[1.03]"
-                        : "grayscale-[0.12] group-hover:scale-[1.04] group-hover:grayscale-0"
-                    }`}
+                    className="object-contain grayscale-[0.12] transition-all duration-700 group-hover:scale-[1.04] group-hover:grayscale-0 sm:object-cover"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
-                  <div className="absolute right-5 top-5 rounded-lg border border-primary/35 bg-primary/95 px-3 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-[0_16px_36px_rgba(0,0,0,0.35)] sm:right-6 sm:top-6">
-                    {item.price}
+                  <div className="absolute inset-x-5 top-5 flex justify-end sm:inset-x-6 sm:top-6">
+                    <span className="menu-price rounded-lg border border-primary/35 bg-primary/95 px-3 py-2 text-right text-white shadow-[0_16px_36px_rgba(0,0,0,0.35)]">
+                      {item.price}
+                    </span>
                   </div>
 
-                  <div
-                    className={`absolute bottom-0 left-0 w-full ${
-                      item.isCenter ? "p-6 sm:p-10" : "p-5 sm:p-8"
-                    }`}
-                  >
+                  <div className="absolute bottom-0 left-0 w-full p-5 sm:p-8">
                     <div className="flex items-end justify-between gap-5">
                       <div className="min-w-0">
                         <span
                           className={`mb-3 inline-block rounded px-3 py-1 text-[10px] font-bold uppercase ${
-                            item.isCenter ? "" : "tracking-widest"
+                            ""
                           } ${item.badgeClass}`}
                         >
                           {item.badge}
                         </span>
-                        <h3
-                          className={`font-heading text-xl md:text-2xl font-medium text-stone-100 ${
-                            item.isCenter ? "md:text-2xl" : ""
-                          }`}
-                        >
+                        <h3 className="font-heading text-xl font-medium text-stone-100 md:text-2xl">
                           {item.title}
                         </h3>
                         <p
@@ -199,12 +181,12 @@ export function FeaturedMenu() {
             <button
               type="button"
               onClick={() => setIsMenuOpen(true)}
-              className="w-full rounded-xl bg-primary px-7 py-3 text-sm md:text-base font-medium uppercase tracking-[0.22rem] text-white transition hover:bg-primary/90 sm:w-auto"
+              className="w-full rounded-xl bg-primary px-7 py-3 text-sm md:text-base font-medium uppercase text-white transition hover:bg-primary/90 sm:w-auto"
             >
               Visa Meny
             </button>
           </div>
-        </div>
+        </Container>
       </section>
 
       <div
@@ -255,7 +237,7 @@ export function FeaturedMenu() {
                     key={category.slug}
                     type="button"
                     onClick={() => setActiveCategory(category.slug)}
-                    className={`rounded-xl px-4 py-2 text-xs font-medium uppercase tracking-[0.2em] transition md:text-sm ${
+                    className={`rounded-xl px-4 py-2 text-xs font-medium uppercase transition md:text-sm ${
                       isActive
                         ? "bg-primary/90 text-white"
                         : "border border-white/10 bg-white/[0.04] text-accent/70 hover:border-primary/40 hover:text-white"
@@ -282,7 +264,7 @@ export function FeaturedMenu() {
                     key={item.name}
                     className="rounded-3xl border border-white/10 bg-background/55 p-4 backdrop-blur-sm sm:p-5"
                   >
-                    <div className="mb-3 flex items-start justify-between gap-3 sm:gap-4">
+                    <div className="mb-3 flex flex-wrap items-start justify-between gap-3 sm:gap-4">
                       <div className="flex min-w-0 items-center gap-3">
                         <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-primary/25 bg-primary/12 shadow-[0_10px_26px_rgba(0,0,0,0.25)] ring-1 ring-white/15">
                           <Image
@@ -297,7 +279,7 @@ export function FeaturedMenu() {
                           {item.name}
                         </h3>
                       </div>
-                      <span className="shrink-0 font-heading text-xs font-medium text-primary sm:text-sm">
+                      <span className="menu-price shrink-0 text-accent">
                         {item.price}
                       </span>
                     </div>

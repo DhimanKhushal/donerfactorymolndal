@@ -163,7 +163,7 @@ export function ContactSection() {
                   </div>
 
                   <div className="rounded-2xl border border-primary/20 bg-primary/12 p-5 sm:p-6">
-                    <p className="text-xs font-medium uppercase tracking-[0.18rem] text-accent/70 sm:text-sm sm:tracking-[0.24rem] md:text-base">
+                    <p className="text-xs font-medium uppercase text-accent/70 sm:text-sm md:text-base">
                       Kockens Tips
                     </p>
                     <p className="mt-4 text-sm text-accent/72 italic md:text-base">
@@ -179,7 +179,7 @@ export function ContactSection() {
                 data-gsap-reveal
                 className="flex flex-wrap items-center gap-3 border-t border-white/8 pt-8"
               >
-                <p className="mr-2 text-xs font-medium uppercase tracking-[0.16rem] text-accent/42 sm:text-sm sm:tracking-[0.2rem] md:text-base">
+                <p className="mr-2 text-xs font-medium uppercase text-accent/42 sm:text-sm md:text-base">
                   Våra Standarder:
                 </p>
                 {standards.map((item) => (

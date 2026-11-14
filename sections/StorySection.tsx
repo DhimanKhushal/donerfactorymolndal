@@ -23,7 +23,7 @@ export function StorySection() {
       <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
         <div className="relative overflow-hidden rounded-3xl">
           <Image
-            src="/featured-menu/pizza-photo.webp"
+            src="/assets/menu/featured/pizza-feature.webp"
             alt="Mörk restauranginteriör"
             width={1200}
             height={1400}
@@ -39,7 +39,7 @@ export function StorySection() {
         </div>
 
         <div className="space-y-7">
-          <p className="text-xs font-semibold uppercase tracking-[0.28rem] text-primary/72">
+          <p className="text-xs font-semibold uppercase text-primary/72">
             Vår Filosofi
           </p>
           <h2 className="max-w-xl font-heading text-4xl leading-tight text-stone-100 sm:text-5xl">

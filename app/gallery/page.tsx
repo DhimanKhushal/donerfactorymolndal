@@ -111,7 +111,7 @@ export default function GalleryPage() {
                 Det gor restaurangen enkel att beskriva som ett modernt casual
                 food-stalle: nygrillat, generost, snabbt att fa ut och byggt for
                 bade lunch, middag och spontana kvallsstopp. I bilderna far
-                lokalen visa samma sak, med oppen energi, tydlig serviceyta och
+                lokalen visa samma sak, med öppen energi, tydlig serviceyta och
                 en varm, urban kansla.
               </p>
             </div>
@@ -161,7 +161,7 @@ export default function GalleryPage() {
                   {walkthroughVideo.title}
                 </h2>
               </div>
-              <span className="rounded-full border border-white/12 bg-black/20 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-accent/70">
+              <span className="rounded-full border border-white/12 bg-black/20 px-3 py-1 text-[10px] uppercase text-accent/70">
                 {walkthroughVideo.duration}
               </span>
             </div>

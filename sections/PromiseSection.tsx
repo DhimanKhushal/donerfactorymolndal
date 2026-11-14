@@ -131,7 +131,7 @@ export function PromiseSection() {
         <div className="flex justify-center pt-4">
           <Link
             href="/contact"
-            className="w-full rounded-xl bg-primary px-8 py-4 text-center text-sm md:text-base font-medium uppercase tracking-[0.22em] text-white transition hover:bg-primary/90 sm:w-auto sm:px-12 sm:tracking-[0.36em]"
+            className="w-full rounded-xl bg-primary px-8 py-4 text-center text-sm md:text-base font-medium uppercase text-white transition hover:bg-primary/90 sm:w-auto sm:px-12"
           >
             Boka bord
           </Link>

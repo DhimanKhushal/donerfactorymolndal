@@ -6,6 +6,7 @@ const __dirname = path.dirname(__filename);
 
 const nextConfig = {
   output: "export",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },

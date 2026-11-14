@@ -1,0 +1,307 @@
+[
+  {
+    "category": "doner",
+    "name": "Pita",
+    "price": 120
+  },
+  {
+    "category": "doner",
+    "name": "Sandwich",
+    "price": 120
+  },
+  {
+    "category": "doner",
+    "name": "XL Wrap",
+    "price": 130
+  },
+  {
+    "category": "doner",
+    "name": "Tallrik",
+    "price": 140
+  },
+  {
+    "category": "doner",
+    "name": "Sallad",
+    "price": 140
+  },
+  {
+    "category": "vegetariskt",
+    "name": "Pita",
+    "price": 110
+  },
+  {
+    "category": "vegetariskt",
+    "name": "XL Wrap",
+    "price": 120
+  },
+  {
+    "category": "vegetariskt",
+    "name": "Tallrik",
+    "price": 130
+  },
+  {
+    "category": "vegetariskt",
+    "name": "Sallad",
+    "price": 130
+  },
+  {
+    "category": "pizzor",
+    "name": "1. Margarita",
+    "price": 120
+  },
+  {
+    "category": "pizzor",
+    "name": "2. Funghi",
+    "price": 130
+  },
+  {
+    "category": "pizzor",
+    "name": "3. Vesuvio",
+    "price": 130
+  },
+  {
+    "category": "pizzor",
+    "name": "4. Hawaii",
+    "price": 130
+  },
+  {
+    "category": "pizzor",
+    "name": "5. Capricciosa",
+    "price": 135
+  },
+  {
+    "category": "pizzor",
+    "name": "6. Venezia",
+    "price": 135
+  },
+  {
+    "category": "pizzor",
+    "name": "7. Calzone",
+    "price": 135
+  },
+  {
+    "category": "pizzor",
+    "name": "8. Salami",
+    "price": 140
+  },
+  {
+    "category": "pizzor",
+    "name": "9. Acapulco",
+    "price": 145
+  },
+  {
+    "category": "pizzor",
+    "name": "10. Huset",
+    "price": 145
+  },
+  {
+    "category": "pizzor",
+    "name": "11. Africana",
+    "price": 145
+  },
+  {
+    "category": "pizzor",
+    "name": "12. Oxfilé Gorgonzola",
+    "price": 145
+  },
+  {
+    "category": "pizzor",
+    "name": "13. Jägare",
+    "price": 155
+  },
+  {
+    "category": "pizzor",
+    "name": "14. Kebabpizza",
+    "price": 135
+  },
+  {
+    "category": "pizzor",
+    "name": "15. Batman",
+    "price": 140
+  },
+  {
+    "category": "pizzor",
+    "name": "16. Chipspizza",
+    "price": 140
+  },
+  {
+    "category": "pizzor",
+    "name": "17. Kebabspecial",
+    "price": 145
+  },
+  {
+    "category": "pizzor",
+    "name": "18. Mölndal",
+    "price": 150
+  },
+  {
+    "category": "pizzor",
+    "name": "19. Orientale",
+    "price": 130
+  },
+  {
+    "category": "pizzor",
+    "name": "20. Kycklingpizza",
+    "price": 130
+  },
+  {
+    "category": "pizzor",
+    "name": "21. Kyckling Dönerspecial",
+    "price": 140
+  },
+  {
+    "category": "pizzor",
+    "name": "22. Chipskyckling",
+    "price": 140
+  },
+  {
+    "category": "pizzor",
+    "name": "23. Kycklingthai",
+    "price": 135
+  },
+  {
+    "category": "pizzor",
+    "name": "24. Mexicana",
+    "price": 140
+  },
+  {
+    "category": "pizzor",
+    "name": "25. Pizzaspecial",
+    "price": 135
+  },
+  {
+    "category": "pizzor",
+    "name": "26. Romana",
+    "price": 135
+  },
+  {
+    "category": "pizzor",
+    "name": "27. Curiosa",
+    "price": 135
+  },
+  {
+    "category": "pizzor",
+    "name": "28. Havet",
+    "price": 150
+  },
+  {
+    "category": "pizzor",
+    "name": "29. Quattro",
+    "price": 150
+  },
+  {
+    "category": "pizzor",
+    "name": "30. Vegetale",
+    "price": 125
+  },
+  {
+    "category": "pizzor",
+    "name": "31. Aten",
+    "price": 120
+  },
+  {
+    "category": "pizzor",
+    "name": "32. Rhodos",
+    "price": 120
+  },
+  {
+    "category": "pizzor",
+    "name": "33. Falafelpizza",
+    "price": 130
+  },
+  {
+    "category": "pizzor",
+    "name": "34. Tutti Frutti",
+    "price": 130
+  },
+  {
+    "category": "gott",
+    "name": "Churros med Nutella",
+    "price": 69
+  },
+  {
+    "category": "gott",
+    "name": "Milkshake - Nutella",
+    "price": 69
+  },
+  {
+    "category": "gott",
+    "name": "Milkshake - Choklad",
+    "price": 69
+  },
+  {
+    "category": "gott",
+    "name": "Milkshake - Jordgubbar",
+    "price": 69
+  },
+  {
+    "category": "gott",
+    "name": "Milkshake - Bounty",
+    "price": 69
+  },
+  {
+    "category": "gott",
+    "name": "Milkshake - Pistage",
+    "price": 69
+  },
+  {
+    "category": "lagg-till",
+    "name": "Regular Fries",
+    "price": 49
+  },
+  {
+    "category": "lagg-till",
+    "name": "Sweet Potato Fries",
+    "price": 59
+  },
+  {
+    "category": "lagg-till",
+    "name": "Dip Sauces",
+    "price": 20
+  },
+  {
+    "category": "lagg-till",
+    "name": "Kött 90g",
+    "price": 69
+  },
+  {
+    "category": "lagg-till",
+    "name": "Mozzarellasticks 6 st",
+    "price": 69
+  },
+  {
+    "category": "lagg-till",
+    "name": "Chilicheese 6 st",
+    "price": 69
+  },
+  {
+    "category": "lagg-till",
+    "name": "Lökringar 6 st",
+    "price": 69
+  },
+  {
+    "category": "lagg-till",
+    "name": "Chicken Nuggets 6 st",
+    "price": 69
+  },
+  {
+    "category": "lagg-till",
+    "name": "Hummus",
+    "price": 59
+  },
+  {
+    "category": "lagg-till",
+    "name": "Tzatziki",
+    "price": 59
+  },
+  {
+    "category": "lagg-till",
+    "name": "Dolma 6 st",
+    "price": 59
+  },
+  {
+    "category": "lagg-till",
+    "name": "Extra dip",
+    "price": 20
+  }
+]

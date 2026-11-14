@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,6 +18,7 @@ const navLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,12 +49,23 @@ export function Navbar() {
   }, [isMenuOpen]);
 
   const widthClass =
-    "w-[calc(100%-3rem)] max-w-[77rem] lg:w-[calc(100%-4rem)] lg:max-w-[76rem]";
+    "w-[calc(100%-2rem)] max-w-[82rem] lg:w-[calc(100%-3rem)] lg:max-w-[81rem]";
+
+  const isActiveLink = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50">
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: -18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className={`mx-auto mt-3 ${widthClass} rounded-2xl border transition-all duration-500 ease-out ${
             isScrolled
               ? "border-white/10 bg-[#120f0e]/46 shadow-[0_18px_60px_rgba(0,0,0,0.24)] backdrop-blur-2xl"
@@ -77,23 +91,41 @@ export function Navbar() {
 
             <nav className="hidden items-center justify-center gap-8 min-[769px]:flex">
               {navLinks.map((link) => (
-                <Link
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  className="text-sm font-medium uppercase tracking-[0.32em] text-accent/75 transition duration-300 hover:text-white"
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.18 }}
                 >
-                  {link.label}
-                </Link>
+                  <Link
+                    href={link.href}
+                    className={`relative px-3 py-2 text-sm font-medium uppercase transition duration-300 ${
+                      isActiveLink(link.href)
+                        ? "text-white"
+                        : "text-accent/75 hover:text-white"
+                    }`}
+                  >
+                    {isActiveLink(link.href) ? (
+                      <span className="absolute inset-x-3 bottom-0 h-px bg-primary/70" />
+                    ) : null}
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
             </nav>
 
             <div className="hidden justify-end min-[769px]:flex">
-              <Link
-                href="/menu"
-                className="rounded-xl border border-primary/30 bg-primary/85 px-5 py-3 text-sm font-medium uppercase tracking-[0.28em] text-white transition duration-300 hover:border-primary/50 hover:bg-primary sm:px-6"
-              >
-                Se menyn
-              </Link>
+              <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="/menu"
+                  className={`rounded-xl px-5 py-3 text-sm font-medium uppercase transition duration-300 sm:px-6 ${
+                    isActiveLink("/menu")
+                      ? "border border-primary/55 bg-primary text-white shadow-[0_0_0_1px_rgba(245,230,211,0.08),0_18px_36px_rgba(139,46,46,0.24)]"
+                      : "border border-primary/30 bg-primary/85 text-white hover:border-primary/50 hover:bg-primary"
+                  }`}
+                >
+                  Se menyn
+                </Link>
+              </motion.div>
             </div>
 
             <button
@@ -145,7 +177,11 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block rounded-xl border border-white/8 bg-white/3 px-4 py-3 text-sm font-medium uppercase tracking-[0.24em] text-accent/80 transition hover:border-primary/30 hover:text-white min-[769px]:text-base"
+                    className={`block rounded-xl px-4 py-3 text-sm font-medium uppercase transition min-[769px]:text-base ${
+                      isActiveLink(link.href)
+                        ? "border border-white/8 bg-white/3 text-white"
+                        : "border border-white/8 bg-white/3 text-accent/80 hover:border-primary/30 hover:text-white"
+                    }`}
                   >
                     {link.label}
                   </Link>
@@ -153,14 +189,18 @@ export function Navbar() {
                 <Link
                   href="/menu"
                   onClick={() => setIsMenuOpen(false)}
-                  className="mt-4 block rounded-xl bg-primary px-4 py-3 text-center text-sm font-medium uppercase tracking-[0.24em] text-white transition hover:bg-primary/90 min-[769px]:text-base"
+                  className={`mt-4 block rounded-xl px-4 py-3 text-center text-sm font-medium uppercase transition min-[769px]:text-base ${
+                    isActiveLink("/menu")
+                      ? "border border-primary/40 bg-primary text-white"
+                      : "bg-primary text-white hover:bg-primary/90"
+                  }`}
                 >
                   Se menyn
                 </Link>
               </nav>
             </Container>
           </div>
-        </div>
+        </motion.div>
       </header>
 
       <div className="h-[5.9rem] min-[769px]:h-[6.2rem]" aria-hidden="true" />

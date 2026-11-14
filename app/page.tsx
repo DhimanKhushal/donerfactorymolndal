@@ -1,5 +1,4 @@
 import { DegustationSection } from "@/sections/DegustationSection";
-import { FeaturedMenu } from "@/sections/FeaturedMenu";
 import { Hero } from "@/sections/Hero";
 import { HomeMenuBoard } from "@/sections/HomeMenuBoard";
 import { PromiseSection } from "@/sections/PromiseSection";
@@ -12,7 +11,6 @@ export default function HomePage() {
       <Hero />
       <HomeMenuBoard />
       <DegustationSection />
-      <FeaturedMenu />
       <TestimonialsSection />
       <PromiseSection />
       <ReservationSection />

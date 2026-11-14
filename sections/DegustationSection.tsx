@@ -1,35 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-
 import { Container } from "@/components/layout/Container";
 
-const craftSlides = [
-  {
-    title: "Döner från grillen",
-    src: "/hero/hero-doner.webp",
-  },
-  {
-    title: "Nygräddad pizza",
-    src: "/hero/hero-pizza.webp",
-  },
-  {
-    title: "Factory burger",
-    src: "/hero/hero-burger.webp",
-  },
-];
+const craftVideoSrc = "/assets/gallery/restaurant-walkthrough-enhanced.mp4";
 
 export function DegustationSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const intervalId = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % craftSlides.length);
-    }, 3400);
-
-    return () => window.clearInterval(intervalId);
-  }, []);
 
   return (
     <section className="group relative overflow-hidden border-y border-white/6 bg-[#17100f] py-18 sm:py-28">
@@ -40,35 +15,20 @@ export function DegustationSection() {
 
           <div className="relative overflow-hidden rounded-3xl bg-[#161212] shadow-[0_40px_120px_rgba(0,0,0,0.45)] transition-transform duration-500 ease-out group-hover:-translate-y-1">
             <div className="relative h-[28rem] sm:h-[34rem]">
-              <div
-                className="flex h-full transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)]"
-                style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+              <video
+                className="h-full w-full object-cover object-center brightness-[0.72] contrast-[1.08] saturate-[1.08] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                poster="/assets/hero/doner-hero.webp"
               >
-                {craftSlides.map((slide, index) => (
-                  <div key={slide.src} className="relative h-full min-w-full">
-                    <Image
-                      src={slide.src}
-                      alt={slide.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 560px"
-                      priority={index === 0}
-                      className="object-cover object-center brightness-[0.5] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                    />
-                  </div>
-                ))}
-              </div>
+                <source src={craftVideoSrc} type="video/mp4" />
+              </video>
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.32)_45%,rgba(0,0,0,0.65)_100%)]" />
-              <div className="absolute bottom-5 left-5 flex gap-2">
-                {craftSlides.map((slide, index) => (
-                  <span
-                    key={slide.src}
-                    className={`h-1.5 rounded-full transition-all duration-500 ${
-                      index === activeIndex
-                        ? "w-10 bg-accent shadow-[0_0_18px_rgba(245,230,211,0.55)]"
-                        : "w-3 bg-white/28"
-                    }`}
-                  />
-                ))}
+              <div className="absolute bottom-5 left-5 rounded-full border border-white/10 bg-black/32 px-4 py-2 text-xs font-medium uppercase text-accent/80 backdrop-blur-md">
+                Filmat i restaurangen
               </div>
             </div>
           </div>

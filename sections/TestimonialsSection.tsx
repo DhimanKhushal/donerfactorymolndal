@@ -11,28 +11,28 @@ const testimonials = [
       "Riktigt bra döner, generösa portioner och smaken känns fräsch varje gång. Perfekt lunchstopp i Mölndal.",
     name: "Amina K.",
     detail: "Återkommande lunchgäst",
-    image: "/testimonials/amina.webp",
+    image: "/assets/testimonials/amina.webp",
   },
   {
     quote:
       "Pizzan kom varm, brödet var krispigt och personalen var snabb utan att det kändes stressigt.",
     name: "Marcus L.",
     detail: "Kvällsbeställning",
-    image: "/testimonials/marcus.webp",
+    image: "/assets/testimonials/marcus.webp",
   },
   {
     quote:
       "Bra variation för hela familjen. Någon tog burger, någon döner och barnen ville direkt tillbaka.",
     name: "Elin R.",
     detail: "Familjebesök",
-    image: "/testimonials/elin.webp",
+    image: "/assets/testimonials/elin.webp",
   },
   {
     quote:
       "Det känns modernt, rent och enkelt att beställa. Extra plus för såserna och den picklade rödkålen.",
     name: "Samir D.",
     detail: "Helgmiddag",
-    image: "/testimonials/samir.webp",
+    image: "/assets/testimonials/samir.webp",
   },
 ];
 
@@ -91,7 +91,7 @@ export function TestimonialsSection() {
                   <p className="text-lg font-semibold text-white">
                     {activeTestimonial.name}
                   </p>
-                  <p className="mt-1 text-sm uppercase tracking-[0.22em] text-accent/54">
+                  <p className="mt-1 text-sm uppercase text-accent/54">
                     {activeTestimonial.detail}
                   </p>
                 </div>

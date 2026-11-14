@@ -17,14 +17,14 @@ export type GalleryVideo = {
   width: number;
 };
 
-const encodeMediaPath = (filename: string) => `/media/${encodeURIComponent(filename)}`;
+const assetPath = (filename: string) => `/assets/gallery/${filename}`;
 
 export const galleryImages: GalleryImage[] = [
   {
     title: "Dining hall",
     category: "Interior",
     alt: "Wide view of the Doner Factory seating area and upper level interior.",
-    filename: "WhatsApp Image 2026-04-21 at 16.15.06 (1).webp",
+    filename: "dining-hall.webp",
     width: 4608,
     height: 2184,
   },
@@ -32,7 +32,7 @@ export const galleryImages: GalleryImage[] = [
     title: "Open kitchen frontage",
     category: "Interior",
     alt: "Restaurant frontage and open seating area at Doner Factory.",
-    filename: "WhatsApp Image 2026-04-21 at 16.15.06 (2).webp",
+    filename: "open-kitchen-frontage.webp",
     width: 4032,
     height: 1908,
   },
@@ -40,7 +40,7 @@ export const galleryImages: GalleryImage[] = [
     title: "Front facade",
     category: "Exterior",
     alt: "Wide exterior frontage of Doner Factory.",
-    filename: "WhatsApp Image 2026-04-21 at 16.15.06.webp",
+    filename: "front-facade.webp",
     width: 1599,
     height: 758,
   },
@@ -48,7 +48,7 @@ export const galleryImages: GalleryImage[] = [
     title: "Atrium view",
     category: "Interior",
     alt: "Tall atrium view looking across the Doner Factory interior.",
-    filename: "WhatsApp Image 2026-04-21 at 16.15.07 (1).webp",
+    filename: "atrium-view.webp",
     width: 2184,
     height: 4608,
   },
@@ -57,7 +57,7 @@ export const galleryImages: GalleryImage[] = [
     title: "Entrance signage",
     category: "Exterior",
     alt: "Tall shot of the Doner Factory entrance and signage.",
-    filename: "WhatsApp Image 2026-04-21 at 16.15.07.webp",
+    filename: "entrance-signage.webp",
     width: 1908,
     height: 4032,
   },
@@ -65,7 +65,7 @@ export const galleryImages: GalleryImage[] = [
     title: "Seating mood",
     category: "Interior",
     alt: "Wide seating and ambient lighting inside Doner Factory.",
-    filename: "WhatsApp Image 2026-04-21 at 16.15.08 (1).webp",
+    filename: "seating-mood.webp",
     width: 4032,
     height: 1908,
   },
@@ -73,7 +73,7 @@ export const galleryImages: GalleryImage[] = [
     title: "Guest area",
     category: "Interior",
     alt: "Wide guest area and restaurant atmosphere at Doner Factory.",
-    filename: "WhatsApp Image 2026-04-21 at 16.15.08.webp",
+    filename: "guest-area.webp",
     width: 4032,
     height: 1908,
   },
@@ -81,7 +81,7 @@ export const galleryImages: GalleryImage[] = [
     title: "Logo close-up",
     category: "Branding",
     alt: "Close-up view of the illuminated Doner Factory logo.",
-    filename: "WhatsApp Image 2026-04-21 at 17.06.42.webp",
+    filename: "logo-closeup.webp",
     width: 1600,
     height: 490,
   },
@@ -92,7 +92,7 @@ export const galleryVideos: GalleryVideo[] = [
     title: "Interior motion",
     description: "A short ambient clip that gives the gallery a living first impression.",
     duration: "7 sec",
-    filename: "WhatsApp Video 2026-04-21 at 16.14.48.mp4",
+    filename: "interior-motion.mp4",
     width: 848,
     height: 478,
   },
@@ -100,9 +100,9 @@ export const galleryVideos: GalleryVideo[] = [
     title: "Restaurant walkthrough",
     description: "A longer look through the restaurant, useful as a featured story clip.",
     duration: "45 sec",
-    filename: "WhatsApp Video 2026-04-21 at 16.14.53.mp4",
-    width: 848,
-    height: 478,
+    filename: "restaurant-walkthrough-enhanced.mp4",
+    width: 1920,
+    height: 1080,
   },
 ];
 
@@ -112,10 +112,10 @@ export const galleryMedia = {
     orientation: (item.width >= item.height ? "landscape" : "portrait") as
       | "landscape"
       | "portrait",
-    src: encodeMediaPath(item.filename),
+    src: assetPath(item.filename),
   })),
   videos: galleryVideos.map((item) => ({
     ...item,
-    src: encodeMediaPath(item.filename),
+    src: assetPath(item.filename),
   })),
 };

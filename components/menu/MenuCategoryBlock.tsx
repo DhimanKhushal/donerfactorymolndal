@@ -26,7 +26,7 @@ export function MenuCategoryBlock({ category }: MenuCategoryBlockProps) {
             key={item.name}
             className="rounded-2xl border border-white/10 bg-background/70 p-4 sm:p-5"
           >
-            <div className="mb-3 flex items-start justify-between gap-3 sm:gap-4">
+            <div className="mb-3 flex flex-wrap items-start justify-between gap-3 sm:gap-4">
               <div className="flex min-w-0 items-center gap-3">
                 <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border border-primary/25 bg-primary/12 shadow-[0_10px_26px_rgba(0,0,0,0.25)] ring-1 ring-white/15">
                   <Image
@@ -39,7 +39,7 @@ export function MenuCategoryBlock({ category }: MenuCategoryBlockProps) {
                 </div>
                 <h3 className="min-w-0 font-heading text-lg md:text-xl font-semibold text-white">{item.name}</h3>
               </div>
-              <span className="shrink-0 font-heading text-xs font-medium text-primary sm:text-sm">{item.price}</span>
+              <span className="menu-price shrink-0 text-accent">{item.price}</span>
             </div>
             <p className="text-sm text-accent/72 md:text-base">
               <span className="font-medium text-accent">Ingredienser:</span>{" "}

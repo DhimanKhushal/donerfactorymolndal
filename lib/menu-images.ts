@@ -1,12 +1,12 @@
 import type { MenuItem } from "@/lib/menu-data";
 
 export const categoryImages: Record<string, string> = {
-  doner: "/menu-generated/menu-doner.webp",
-  vegetariskt: "/menu-generated/menu-vegetarian.webp",
-  pizzor: "/menu-generated/menu-pizza.webp",
-  burgare: "/menu-generated/menu-burger.webp",
-  gott: "/menu-generated/menu-dessert.webp",
-  "lagg-till": "/menu-generated/menu-sides.webp",
+  doner: "/assets/menu/generated/doner-category.webp",
+  vegetariskt: "/assets/menu/generated/vegetarian-category.webp",
+  pizzor: "/assets/menu/generated/pizza-category.webp",
+  burgare: "/assets/menu/generated/burger-category.webp",
+  gott: "/assets/menu/generated/dessert-category.webp",
+  "lagg-till": "/assets/menu/generated/sides-category.webp",
 };
 
 export function getMenuItemImage(categorySlug: string, item: MenuItem) {
@@ -17,31 +17,31 @@ export function getMenuItemImage(categorySlug: string, item: MenuItem) {
 
   if (categorySlug === "doner") {
     if (name.includes("wrap") || name.includes("sandwich")) {
-      return "/featured-generated/doner-wrap.webp";
+      return "/assets/menu/generated/doner-wrap-detail.webp";
     }
 
     if (name.includes("tallrik")) {
-      return "/featured-generated/doner-plate.webp";
+      return "/assets/menu/generated/doner-plate-detail.webp";
     }
 
     if (name.includes("sallad")) {
-      return "/featured-generated/vegetarian-plate.webp";
+      return "/assets/menu/generated/vegetarian-plate-detail.webp";
     }
 
-    return "/menu-generated/menu-doner.webp";
+    return "/assets/menu/generated/doner-category.webp";
   }
 
   if (categorySlug === "vegetariskt") {
     if (name.includes("tallrik") || name.includes("sallad")) {
-      return "/featured-generated/vegetarian-plate.webp";
+      return "/assets/menu/generated/vegetarian-plate-detail.webp";
     }
 
-    return "/menu-generated/menu-vegetarian.webp";
+    return "/assets/menu/generated/vegetarian-category.webp";
   }
 
   if (categorySlug === "pizzor") {
     if (name.includes("funghi") || name.includes("capricciosa")) {
-      return "/featured-generated/pizza-funghi.webp";
+      return "/assets/menu/generated/pizza-funghi-detail.webp";
     }
 
     if (
@@ -49,27 +49,27 @@ export function getMenuItemImage(categorySlug: string, item: MenuItem) {
       searchable.includes("ananas") ||
       searchable.includes("banan")
     ) {
-      return "/featured-generated/pizza-hawaii.webp";
+      return "/assets/menu/generated/pizza-hawaii-detail.webp";
     }
 
-    return "/menu-generated/menu-pizza.webp";
+    return "/assets/menu/generated/pizza-category.webp";
   }
 
   if (categorySlug === "burgare") {
     if (searchable.includes("chicken") || searchable.includes("crispy")) {
-      return "/featured-generated/chicken-burger.webp";
+      return "/assets/menu/generated/chicken-burger-detail.webp";
     }
 
-    return "/menu-generated/menu-burger.webp";
+    return "/assets/menu/generated/burger-category.webp";
   }
 
   if (categorySlug === "gott") {
-    return "/menu-generated/menu-dessert.webp";
+    return "/assets/menu/generated/dessert-category.webp";
   }
 
   if (categorySlug === "lagg-till") {
-    return "/menu-generated/menu-sides.webp";
+    return "/assets/menu/generated/sides-category.webp";
   }
 
-  return categoryImages[categorySlug] ?? "/menu-generated/menu-doner.webp";
+  return categoryImages[categorySlug] ?? "/assets/menu/generated/doner-category.webp";
 }

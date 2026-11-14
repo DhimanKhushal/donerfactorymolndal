@@ -6,12 +6,12 @@ const sideCards = [
   {
     title: "The Alchemy of Sumac",
     subtitle: "Utvalda Kryddor",
-    image: "/featured-menu/vegetarian-photo.webp",
+    image: "/assets/menu/featured/vegetarian-feature.webp",
   },
   {
     title: "Stone Oven Rituals",
     subtitle: "Bageriets Noteringar",
-    image: "/featured-menu/pizza-photo.webp",
+    image: "/assets/menu/featured/pizza-feature.webp",
   },
 ];
 
@@ -23,7 +23,7 @@ export function JournalSection() {
           <h2 className="font-heading text-4xl text-stone-100 sm:text-5xl">
             Atelierjournalen
           </h2>
-          <p className="text-sm uppercase tracking-[0.22rem] text-accent/48">
+          <p className="text-sm uppercase text-accent/48">
             Betraktelser från köket och vinglaset.
           </p>
         </div>
@@ -32,14 +32,14 @@ export function JournalSection() {
           <article className="overflow-hidden rounded-3xl border border-white/8 bg-white/[0.03]">
             <div className="relative h-[26rem]">
               <Image
-                src="/featured-menu/burger-photo.webp"
+                src="/assets/menu/featured/burger-feature.webp"
                 alt="Journalhuvudbild"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="space-y-3 p-6">
-              <p className="text-xs uppercase tracking-[0.24rem] text-primary/70">
+              <p className="text-xs uppercase text-primary/70">
                 Vinets Notiser
               </p>
               <h3 className="font-heading text-3xl text-stone-100">
@@ -63,7 +63,7 @@ export function JournalSection() {
                   />
                 </div>
                 <div className="space-y-2 p-5">
-                  <p className="text-xs uppercase tracking-[0.22rem] text-primary/70">
+                  <p className="text-xs uppercase text-primary/70">
                     {card.subtitle}
                   </p>
                   <h3 className="font-heading text-2xl text-stone-100">
@@ -75,7 +75,7 @@ export function JournalSection() {
 
             <article className="flex min-h-[14rem] flex-col justify-between rounded-3xl border border-white/8 bg-[#3a2523] p-6">
               <div>
-                <p className="text-xs uppercase tracking-[0.22rem] text-accent/54">
+                <p className="text-xs uppercase text-accent/54">
                   Join the Inner Circle
                 </p>
                 <h3 className="mt-4 font-heading text-3xl text-stone-100">

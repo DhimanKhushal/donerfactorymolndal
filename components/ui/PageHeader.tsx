@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/Container";
+import { MotionReveal } from "@/components/ui/Motion";
 
 type PageHeaderProps = {
   eyebrow: string;
@@ -13,8 +14,7 @@ export function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
       <div className="pointer-events-none absolute left-1/2 top-0 h-36 w-[min(42rem,80vw)] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl sm:h-44" />
 
       <Container className="relative z-10">
-        <div
-          data-gsap-reveal
+        <MotionReveal
           className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-[#171111]/42 p-6 text-center shadow-[0_18px_70px_rgba(0,0,0,0.22)] backdrop-blur-2xl sm:p-10"
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.012)_52%,rgba(255,255,255,0)_100%)]" />
@@ -30,7 +30,7 @@ export function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
               {description}
             </p>
           </div>
-        </div>
+        </MotionReveal>
       </Container>
     </section>
   );

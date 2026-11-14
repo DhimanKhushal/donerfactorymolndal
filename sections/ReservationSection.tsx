@@ -37,13 +37,13 @@ export function ReservationSection() {
               <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 <Link
                   href="/menu"
-                  className="rounded-xl bg-primary px-7 py-3 text-center text-sm md:text-sm font-medium uppercase tracking-[0.2em] text-white transition hover:bg-primary/90 sm:tracking-[0.28em]"
+                  className="rounded-xl bg-primary px-7 py-3 text-center text-sm md:text-sm font-medium uppercase text-white transition hover:bg-primary/90"
                 >
                   Se menyn
                 </Link>
                 <Link
                   href="/contact"
-                  className="rounded-xl border border-white/14 bg-white/[0.04] px-7 py-3 text-center text-sm md:text-sm font-medium uppercase tracking-[0.2em] text-accent transition hover:border-white/26 hover:bg-white/[0.07] hover:text-white sm:tracking-[0.28em]"
+                  className="rounded-xl border border-white/14 bg-white/[0.04] px-7 py-3 text-center text-sm md:text-sm font-medium uppercase text-accent transition hover:border-white/26 hover:bg-white/[0.07] hover:text-white"
                 >
                   Kontakt & öppettider
                 </Link>
@@ -56,7 +56,7 @@ export function ReservationSection() {
                   key={fact.label}
                   className="rounded-2xl border border-white/8 bg-white/4 p-5 backdrop-blur-sm"
                 >
-                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent/42 sm:text-sm sm:tracking-[0.28em] md:text-sm">
+                  <p className="text-xs font-medium uppercase text-accent/42 sm:text-sm md:text-sm">
                     {fact.label}
                   </p>
                   <p className="mt-3 font-heading  text-xl md:text-2xl font-medium leading-tight text-white">
