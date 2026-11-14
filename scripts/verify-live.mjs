@@ -3,16 +3,19 @@ import { setTimeout } from "node:timers/promises";
 
 const revision = process.env.GITHUB_SHA;
 assert.match(revision ?? "", /^[a-f0-9]{40}$/);
+const expectedRun = `https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+assert.match(expectedRun, /^https:\/\/github\.com\/[^/]+\/[^/]+\/actions\/runs\/\d+$/);
 const base = "https://donerfactorymolndal.se";
 const deadline = Date.now() + 5 * 60 * 1000;
 let deployed = false;
 while (Date.now() < deadline) {
   try {
-    const response = await fetch(`${base}/deployment.json?revision=${revision}`, {
+    const response = await fetch(`${base}/deployment.json?revision=${revision}&run=${process.env.GITHUB_RUN_ID}`, {
       signal: AbortSignal.timeout(15000),
       cache: "no-store",
     });
-    if (response.ok && (await response.json()).source === revision) {
+    const info = response.ok ? await response.json() : null;
+    if (info?.source === revision && info?.run === expectedRun) {
       deployed = true;
       break;
     }
